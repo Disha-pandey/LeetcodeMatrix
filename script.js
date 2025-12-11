@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/leetcode", {
+      const response = await fetch("https://leetcodematrix.onrender.com/leetcode", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const stats = data.data.matchedUser.submitStats.acSubmissionNum;
 
-      // UI update karo
+      // UI update
       statsContainer.innerHTML = `
         <h2 class="text-xl font-bold">LeetCode Stats for ${username}</h2>
         <ul>
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
       `;
 
-      // Circle labels update karo
+      // Circle labels update
       document.getElementById("easy-label").textContent = stats[1].count;
       document.getElementById("Medium-label").textContent = stats[2].count;
       document.getElementById("Hard-label").textContent = stats[3].count;
